@@ -1,0 +1,28 @@
+<h1>Post</h1>
+<%= @post.body %>
+
+<h1>Comments</h1>
+
+<% @post.comments.each do |comment| %>
+	<%= comment.body %><br/>
+<% end %>
+
+<h1>Tags</h1>
+
+<% @post.tags.each do |tag| %>
+	<%= tag.name %><br/>
+<% end %>
+
+<h2>Create a new comment!</h2>
+<%= form_for @comment, url: post_comments_url(@post) do |f| %>
+	<%= f.label :body %>
+  <%= f.text_area :body, size: "60x12" %>
+  <%= f.submit "Create New Comment" %>
+<% end %>
+
+<h2>Create a new tag!</h2>
+<%= form_for @tag, url: post_tags_url(@post) do |f| %>
+	<%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create New Tag" %>
+<% end %>
