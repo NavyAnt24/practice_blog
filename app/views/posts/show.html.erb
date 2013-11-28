@@ -3,9 +3,12 @@
 
 <h1>Comments</h1>
 
-<% @post.comments.each do |comment| %>
+<% @comments.each do |comment| %>
 	<%= comment.body %><br/>
 <% end %>
+
+<br>
+<%= will_paginate @comments %>
 
 <h1>Tags</h1>
 

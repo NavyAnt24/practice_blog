@@ -34,6 +34,7 @@ end
 
 gem 'protected_attributes'
 gem 'faker'
+gem 'will_paginate'
 
 
 # Use ActiveModel has_secure_password

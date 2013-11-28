@@ -1,4 +1,10 @@
+<%= will_paginate %>
+<br>
+
 <% @posts.each do |post| %>
 	<%= link_to post.body, post_url(post) %>
 	<br/><br/>
 <% end %>
+
+<br>
+<%= will_paginate %>
