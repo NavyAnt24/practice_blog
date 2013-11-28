@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
-		@comments = @post.comments.paginate(page: params[:page], :per_page => 5)
+		@comments = @post.comments.paginate(page: params[:page], :per_page => 5).order('created_at DESC')
 		
 		@comment = Comment.new
 		@tag = Tag.new
